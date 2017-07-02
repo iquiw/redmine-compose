@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  redmine:
+    image: redmine
+    ports:
+      - 3000:3000
+    environment:
+      REDMINE_DB_MYSQL: db
+      REDMINE_DB_USERNAME: redmine
+      REDMINE_DB_PASSWORD: redmine
+      REDMINE_PLUGINS_MIGRATE: 1
+    depends_on:
+      - db
+      - plugins
+    volumes:
+      - plugins:/usr/src/redmine/plugins
+
+  db:
+    build: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: redmine
+      MYSQL_DATABASE: redmine
+      MYSQL_USER: redmine
+      MYSQL_PASSWORD: redmine
+
+  plugins:
+    build: plugins
+    volumes:
+      - plugins:/usr/src/redmine/plugins
+
+volumes:
+  plugins:

@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  redmine:
+    image: redmine
+    ports:
+      - 3000:3000
+    environment:
+      REDMINE_DB_POSTGRES: db
+      REDMINE_DB_USERNAME: redmine
+      REDMINE_DB_PASSWORD: redmine
+      REDMINE_PLUGINS_MIGRATE: 1
+    depends_on:
+      - db
+      - plugins
+    volumes:
+      - plugins:/usr/src/redmine/plugins
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: redmine
+      POSTGRES_USER: redmine
+      POSTGRES_PASSWORD: redmine
+
+  plugins:
+    build: plugins
+    volumes:
+      - plugins:/usr/src/redmine/plugins
+
+volumes:
+  plugins:
