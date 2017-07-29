@@ -17,7 +17,7 @@ services:
       - plugins:/usr/src/redmine/plugins
 
   db:
-    image: postgres
+    image: iquiw/pgroonga-on-postgres
     environment:
       POSTGRES_DB: redmine
       POSTGRES_USER: redmine
