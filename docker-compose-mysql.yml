@@ -13,8 +13,10 @@ services:
     depends_on:
       - db
       - plugins
+      - themes
     volumes:
       - plugins:/usr/src/redmine/plugins
+      - themes:/usr/src/redmine/public/themes/minimalflat2
 
   db:
     build: mysql
@@ -29,5 +31,11 @@ services:
     volumes:
       - plugins:/usr/src/redmine/plugins
 
+  themes:
+    build: themes
+    volumes:
+      - themes:/usr/src/redmine/public/themes/minimalflat2
+
 volumes:
   plugins:
+  themes:
