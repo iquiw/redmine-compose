@@ -1,6 +1,6 @@
 FROM alpine
 
-ARG MF2_VER=1.3.1
+ARG MF2_VER=1.3.2
 
 WORKDIR "/usr/src/redmine/public/themes"
 
