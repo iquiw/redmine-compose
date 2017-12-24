@@ -1,4 +1,4 @@
-FROM redmine
+FROM redmine:passenger
 
 RUN apt-get update && apt-get install -y --no-install-recommends gcc make
 

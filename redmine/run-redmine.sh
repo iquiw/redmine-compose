@@ -10,4 +10,4 @@ if [ -f "$EXTERNAL_FILTER_CONFIG" ]; then
 	cp "$EXTERNAL_FILTER_CONFIG" /usr/src/redmine/config/
 fi
 
-exec /docker-entrypoint.sh rails server -b 0.0.0.0
+exec /docker-entrypoint.sh passenger start
