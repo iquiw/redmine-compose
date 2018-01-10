@@ -19,7 +19,7 @@ services:
       - themes:/usr/src/redmine/public/themes/minimalflat2
 
   db:
-    image: iquiw/pgroonga-on-postgres
+    build: postgres
     environment:
       POSTGRES_DB: redmine
       POSTGRES_USER: redmine
