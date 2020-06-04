@@ -2,6 +2,7 @@ version: '3'
 
 services:
   redmine:
+    restart: always
     build: redmine
     ports:
       - 3000:3000
