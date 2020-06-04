@@ -10,6 +10,7 @@ services:
       REDMINE_DB_MYSQL: db
       REDMINE_DB_USERNAME: redmine
       REDMINE_DB_PASSWORD: redmine
+      REDMINE_DB_ENCODING: utf8mb4
       REDMINE_PLUGINS_MIGRATE: 1
     depends_on:
       - db
