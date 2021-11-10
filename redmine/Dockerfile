@@ -1,4 +1,4 @@
-FROM iquiw/redmica:1.2.0-passenger
+FROM iquiw/redmica:2.0.0-passenger
 
 RUN apt-get update && apt-get install -y --no-install-recommends gcc make
 
